@@ -8,7 +8,7 @@ import dateutil.parser
 from datetime import datetime
 from datetime import timedelta
 
-FILEPATH = '/home/juliusrain/code/punchclock/hours.log'
+FILEPATH = ''
 
 def clockin():
     if os.path.exists(FILEPATH):
@@ -90,16 +90,17 @@ def period(start, end):
     print 'Your hours for %s to %s are %0.2fh' % (start.date().__str__(), end.date().__str__(), hours)
     
 def info():
-    print 'Usage: python punchlock.py <command> \n \n \
-  The available commands are:\n \
-      [clock]in \t log clockin time \n \
-      [clock]out \t log clockout time \n \
-      day \t\t display total hours worked for the current day \n \
-      week \t\t display total hours worked for the current week \n \
-      month \t\t display total hours worked for the current monty \n \
-      total \t\t display total hours worked ever \n \
-      period \t\t display total hours worked from start [dd.mm.yyyy] to end [dd.mm.yyyy] \n \
-      help \t\t display this stuff'
+    print 'Usage: python punchlock.py <command> \n\n\
+Before use, specify a file path in FILEPATH variable in punchclock.py for hour log. \n\n\
+The available commands are:\n \
+    [clock]in \t log clockin time \n \
+    [clock]out \t log clockout time \n \
+    day \t\t display total hours worked for the current day \n \
+    week \t\t display total hours worked for the current week \n \
+    month \t\t display total hours worked for the current monty \n \
+    total \t\t display total hours worked ever \n \
+    period \t\t display total hours worked from start [dd.mm.yyyy] to end [dd.mm.yyyy] \n \
+    help \t\t display this stuff'
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
